@@ -1,0 +1,11 @@
+.fruit {
+    color: rgba(255, 2, 25, 1);
+    background-color: rgba(2, 2, 255, 0.4);
+    font-size: 20px;
+}
+
+.nut {
+    color: rgba(5, 2, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 15px;
+}
