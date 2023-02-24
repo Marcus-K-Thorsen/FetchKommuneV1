@@ -1,4 +1,9 @@
 console.log("Jeg er i fetchkommuner.js")
+
+const sov = (ms) => {
+    return new Promise(dummyFunction => setTimeout(dummyFunction, ms))
+}
+
 const urlKommuner = "https://api.dataforsyningen.dk/kommuner"
 
 function fetchKommuner(url) {
@@ -24,9 +29,15 @@ function addKommuneToDropDown(kom) {
 }
 
 async function fillKommunerToDropDown() {
-    const kommuner = await fetchKommuner(urlKommuner)
-    console.log(kommuner)
-    kommuner.forEach(kom => addKommuneToDropDown(kom))
+    await sov(10000).then( async (value) => {
+        const kommuner = await fetchKommuner(urlKommuner)
+        console.log(kommuner)
+        kommuner.forEach(kom => addKommuneToDropDown(kom))
+        console.log("It was a succes to fill the dropdown menu with kommuner: " + value)
+    }).catch(error => {
+        console.log("It was a fail to fill the dropdown menu with kommuner: " + error)
+    })
+
 }
 
 function selectKommune() {

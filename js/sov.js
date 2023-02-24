@@ -3,6 +3,8 @@ const sov = (ms) => {
     return new Promise(dummyFunction => setTimeout(dummyFunction, ms))
 }
 
+
+
 async function doSomethingAsync() {
     console.log("1111 før sov")
     await sov(2000)
